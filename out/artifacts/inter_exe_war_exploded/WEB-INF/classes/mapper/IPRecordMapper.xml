@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lee.dao.IPRecordDao">
+
+    <select id="listIPRecord" resultType="com.lee.pojo.IPRecord">
+        select * from ip_record;
+    </select>
+
+    <insert id="saveIPRecord" >
+        insert into ip_record(uri,view_num) values (#{uri},#{viewNum});
+    </insert>
+
+    <update id="updateIPRecord">
+        update ip_record  set view_num  =  #{viewNum} where uri = #{uri}
+    </update>
+
+    <select id="getIpRecordByUri" resultType="com.lee.pojo.IPRecord">
+        select * from ip_record  where uri = #{uri}
+    </select>
+
+
+</mapper>
